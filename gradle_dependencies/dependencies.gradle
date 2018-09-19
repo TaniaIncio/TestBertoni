@@ -1,0 +1,25 @@
+ext {
+
+    /**Version*/
+    supportVersion = '27.1.1'
+    espressoVersion = '2.2.2'
+    constraintlayoutVersion = '1.+'
+
+
+    /**Names package**/
+    supportPackage = 'com.android.support'
+    constraintlayoutPackage = 'com.android.support.constraint'
+
+    /**Dependencies**/
+    supportDependencies = [
+            design           : buildDependency(supportPackage, 'design', supportVersion),
+            appCompat        : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            vector        : buildDependency(supportPackage, 'support-vector-drawable', supportVersion)]
+
+    constraintLayout =buildDependency(constraintlayoutPackage,'constraint-layout',constraintlayoutVersion)
+
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}

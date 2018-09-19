@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/edtTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="add new task"
+            android:inputType="textMultiLine"
+            android:minLines="1"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+            <TextView
+                android:id="@+id/txt_save"
+                style="@style/AppTheme.TextTitleDialogGrayOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/material_blue_300"
+                android:paddingBottom="@dimen/margin"
+                android:paddingRight="@dimen/margin"
+                android:paddingLeft="@dimen/margin"
+                android:text="@string/option_save" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

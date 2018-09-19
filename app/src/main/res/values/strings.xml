@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestBertoni</string>
+    <string name="item_task" translatable="true">task item</string>
+    <string name="name_title" translatable="true">Tasks</string>
+    <string name="option_save" translatable="true">Save</string>
+    <string name="name_button" translatable="true">Add new task</string>
+
+</resources>
