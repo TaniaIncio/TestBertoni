@@ -1,10 +1,10 @@
 package com.tincio.testbertoni.presentation;
 
 import android.content.Context;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,8 +17,6 @@ import com.tincio.testbertoni.data.TaskCursor;
 import com.tincio.testbertoni.presentation.view.DialogCustomTask;
 
 import java.util.List;
-
-import static android.view.View.GONE;
 
 public class MainActivity  extends AppCompatActivity implements MainView,
                                                     View.OnClickListener,
@@ -50,11 +48,10 @@ public class MainActivity  extends AppCompatActivity implements MainView,
         mAdapter = new MainAdapter( presenter::onItemClick);
         mAdapter.setHasStableIds(true);
         recyclerView.setAdapter(mAdapter);
-        startApp();
+        refreshApp();
     }
 
-    void startApp(){
-        //addVisitedLocations();
+    void refreshApp(){
         getSupportLoaderManager()
                 .restartLoader(LOADER_STREAM, null, mLoaderCallbacks);
     }
@@ -74,14 +71,14 @@ public class MainActivity  extends AppCompatActivity implements MainView,
 
     @Override
     public void showProgress() {
-        /*progressBar.setVisibility(View.VISIBLE);
-        recyclerView.setVisibility(View.INVISIBLE);*/
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void hideProgress() {
-      /*  progressBar.setVisibility(View.INVISIBLE);
-        recyclerView.setVisibility(View.VISIBLE);*/
+        progressBar.setVisibility(View.INVISIBLE);
+        recyclerView.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -90,13 +87,6 @@ public class MainActivity  extends AppCompatActivity implements MainView,
         getSupportLoaderManager()
                 .restartLoader(LOADER_STREAM, null, mLoaderCallbacks);
     }
-
-
-    @Override
-    public void showMessage(String message) {
-
-    }
-
 
 
     private LoaderManager.LoaderCallbacks<Cursor> mLoaderCallbacks
@@ -136,7 +126,7 @@ public class MainActivity  extends AppCompatActivity implements MainView,
     @Override
     public void refresh() {
 
-        startApp();
+        refreshApp();
     }
 
     @Override

@@ -56,6 +56,7 @@ public class MainPresenter  implements MainCallback {
     /***INSERT*/
 
     void insertItem(Task task){
+        if(task.getDescription().isEmpty())return;
         itemsInteractor.insertItem(task);
     }
 

@@ -17,8 +17,6 @@ public interface MainView {
 
     void setItems(List<Task> items);
 
-    void showMessage(String message);
-
     void refresh();
 
     Context getContext();

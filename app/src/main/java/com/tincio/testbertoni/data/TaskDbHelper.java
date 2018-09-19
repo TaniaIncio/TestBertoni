@@ -73,8 +73,6 @@ public class TaskDbHelper extends SQLiteOpenHelper implements
 
         ContentValues cv = new ContentValues();
 
-      //  cv.put(COLUMN_NAME_IDENTIFIER, id);
-
         cv.put(COLUMN_NAME_DESCRIPTION, description);
         cv.put(COLUMN_NAME_STATUS, status);
         // TODO: verify whether the db parameter is needed - can we just get
